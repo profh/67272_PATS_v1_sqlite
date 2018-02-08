@@ -26,4 +26,20 @@ module Contexts
   include Contexts::Dosages
   include Contexts::Treatments
   include Contexts::Users
+  
+  def create_all
+    create_vet_users
+    create_animals
+    create_medicines
+    create_medicine_costs
+    create_animal_medicines
+    create_procedures
+    create_procedure_costs
+    create_owners
+    create_pets
+    create_visits
+    create_dosages
+    create_treatments
+  end
+  
 end
