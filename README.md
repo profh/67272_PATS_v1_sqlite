@@ -21,7 +21,7 @@ If you want to load the testing context into the development database, you can d
 1. if you have previously populated the database, drop it and rerun `rails db:migrate` to recreate a blank db.
 1. open `rails console`
 1. type `require 'factory_bot_rails'` (it will say 'false')
-1. type `require 'require './test/contexts'` (it will say 'true')
+1. type `require './test/contexts'` (it will say 'true')
 1. type `include Contexts` (it will say 'Object')
 1. type in whatever context building method you wish (e.g., `create_animals`)
 
