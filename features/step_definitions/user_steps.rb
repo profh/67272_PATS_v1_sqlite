@@ -16,3 +16,11 @@ Given /^no setup yet$/ do
   destroy_owners
   destroy_animals
 end
+
+Given /^a logged in user$/ do
+  @vet = FactoryBot.create(:user, first_name: "Ted", username: "ted", role: "vet")
+  visit login_path
+  fill_in('username', :with => "ted")
+  fill_in('password', :with => "secret")
+  click_button('Log In')
+end

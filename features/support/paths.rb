@@ -12,7 +12,6 @@ module NavigationHelpers
       privacy_path
 
 
-
     else
       begin
         page_name =~ /the (.*) page/

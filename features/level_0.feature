@@ -45,7 +45,9 @@ Feature: Standard Business
   
   Scenario: Navigation exists to link resources
     Given an initial setup
+    Given a logged in user
     When I go to the home page
+    Then show me the page
     And I click on the link "Pets"
     Then I should see "Active Pets at PATS"
     And I should see "Dusty"

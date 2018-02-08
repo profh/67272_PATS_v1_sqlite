@@ -28,8 +28,12 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+# When /^(?:|I )click on the link "Pets"/ do 
+#   click_link("Pets")
+# end
+
 When /^(?:|I )click on the link "([^"]*)"/ do |link_name|
-  click_link "#{link_name}"
+  click_link("#{link_name}")
 end
 
 When /^(?:|I )click on the first link "([^"]*)"/ do |link_name|
