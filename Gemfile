@@ -64,6 +64,9 @@ group :development, :test do
   gem 'minitest-rails', '3.0.0'
   gem 'minitest-reporters', '1.1.19'
   gem 'rails-controller-testing', '1.0.2'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
