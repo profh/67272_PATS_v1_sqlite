@@ -10,7 +10,14 @@ module NavigationHelpers
       contact_path
     when /the Privacy\s?page/
       privacy_path
-
+    when /the owners\s?page/
+      owners_path      
+    when /the new owner\s?page/
+      new_owner_path
+    when /the details on Mark Heimann/
+      owner_path(@mark)
+    when /the edit Alex\s?page/
+      edit_owner_path(@alex)  
 
     else
       begin
