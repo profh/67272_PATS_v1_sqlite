@@ -10,7 +10,7 @@ class OwnersController < ApplicationController
 
   def show
     # get all the pets for this owner
-    @current_pets = @owner.pets.active.to_a
+    @current_pets = @owner.pets.alphabetical.active.to_a
   end
 
   def new
