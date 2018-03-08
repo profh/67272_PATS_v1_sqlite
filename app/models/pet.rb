@@ -1,4 +1,6 @@
 class Pet < ApplicationRecord
+  include AppHelpers::Validations
+
   # Relationships
   # -----------------------------
   belongs_to :animal
@@ -65,24 +67,10 @@ class Pet < ApplicationRecord
   # -----------------------------
   private
   def animal_type_treated_by_PATS
-    # get an array of all animal ids PATS treats
-    treated_animal_ids = Animal.all.map{|a| a.id}
-    # add error unless the animal id of the pet is in the array of possible animal ids
-    unless treated_animal_ids.include?(self.animal_id)
-      errors.add(:animal, "is an animal type not treated by PATS")
-      return false   # not necessary, but I like to add it ...
-    end
-    return true  # also not strictly necessary ...
+    is_active_in_system(:animal)
   end
   
   def owner_is_active_in_PATS_system
-    # get an array of all active owners in the PATS system
-    all_owner_ids = Owner.active.all.map{|o| o.id}
-    # add error unless the owner id of the pet is in the array of active owners
-    unless all_owner_ids.include?(self.owner_id)
-      errors.add(:owner, "is not an active owner in PATS")
-      return false
-    end
-    return true
+    is_active_in_system(:owner)
   end
 end
