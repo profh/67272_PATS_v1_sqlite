@@ -1,5 +1,7 @@
 class Pet < ApplicationRecord
   include AppHelpers::Validations
+  include AppHelpers::Activeable::InstanceMethods
+  extend AppHelpers::Activeable::ClassMethods
 
   # Relationships
   # -----------------------------
@@ -16,9 +18,14 @@ class Pet < ApplicationRecord
   # order pets by their name
   scope :alphabetical, -> { order('name') }
   # get all the pets we treat (not moved away or dead)
-  scope :active, -> { where(active: true) }
-  # get all the pets we heave treated that moved away or died
-  scope :inactive, -> { where.not(active: true) }
+  # the code below now replaced with AppHelpers::Activeable::ClassMethods
+  ## scope :active, -> { where(active: true) }
+  ## ... which is really the same as (but shorter):
+  ## def self.active
+  ##   where(active: true)
+  ## end
+  ## get all the pets we heave treated that moved away or died
+  ## scope :inactive, -> { where.not(active: true) }
   # get all the female pets
   scope :females, -> { where(female: true) }
   # get all the male pets
