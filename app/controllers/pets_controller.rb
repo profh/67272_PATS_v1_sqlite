@@ -25,7 +25,7 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     if @pet.save
-      redirect_to @pet, notice: "Successfully added #{@pet.name} as a PATS pet."
+      redirect_to pet_path(@pet), notice: "Successfully added #{@pet.name} as a PATS pet."
     else
       render action: 'new'
     end
