@@ -35,7 +35,7 @@ gem 'bcrypt', '3.1.11'
 # Other gems
 gem 'chronic', '0.10.2'
 gem 'materialize-sass', '0.100.2'
-gem 'simple_form', '3.5.0'
+gem 'simple_form', '5.0.0'
 gem 'materialize-form', '1.0.8'
 gem 'jquery-rails', '4.3.1'
 gem 'jquery-ui-rails', '6.0.1'
