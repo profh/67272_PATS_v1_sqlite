@@ -17,6 +17,9 @@ class Pet < ApplicationRecord
   scope :active, -> { where(active: true) }
   # get all the pets we heave treated that moved away or died
   scope :inactive, -> { where.not(active: true) }
+  # alternative ways of doing the inactive scope:
+  # scope :inactive, -> { where(active: false) }
+  # scope :inactive, -> { where('active = ?', true) }
   # get all the female pets
   scope :females, -> { where(female: true) }
   # get all the male pets

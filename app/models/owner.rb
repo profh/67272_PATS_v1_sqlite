@@ -20,6 +20,8 @@ class Owner < ApplicationRecord
   scope :inactive, -> { where.not(active: true) }
   # search for all the owners in the system by either first or last name
   scope :search, ->(term) { where('first_name LIKE ? OR last_name LIKE ?', "#{term}%", "#{term}%") }
+  # a very unsafe alternative:
+  # scope :search, ->(term) { where("first_name LIKE #{term}% OR last_name LIKE #{term}%" }
 
   # Misc Constants
   # -----------------------------
