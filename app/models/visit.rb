@@ -4,6 +4,7 @@ class Visit < ApplicationRecord
   belongs_to :pet
   has_one :animal, through: :pet
   has_many :dosages
+  # has_many :medicines, through: :dosages
   has_many :treatments
   has_one :owner, through: :pet
   # has_many :notes, as: :notable
