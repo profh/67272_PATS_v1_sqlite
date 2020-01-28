@@ -14,6 +14,7 @@ class Medicine < ApplicationRecord
   scope :vaccines,     -> { where(vaccine: true) }
   scope :nonvaccines,  -> { where(vaccine: false) }
   scope :for_animal,   ->(animal_id) { joins(:animal_medicines).where('animal_medicines.animal_id = ?', animal_id) }
+  scope :for_visit,    ->(visit_id) { joins(:dosages).where('dosages.visit_id = ?', visit_id) }
   
   # Validations
   validates_presence_of :name
