@@ -4,7 +4,9 @@ class MedicineCost < ApplicationRecord
 
   # Scopes
   scope :chronological, -> { order('start_date') }
-  scope :current,       -> { where("end_date IS NULL") }
+  # scope :current,       -> { where("end_date IS NULL") }
+  scope :current,       -> { where(end_date: nil) }
+
   scope :for_date,      ->(date) { where("start_date <= ? AND (end_date > ? OR end_date IS NULL)", date, date) }
   scope :for_medicine,  ->(medicine_id) { where(medicine_id: medicine_id) }
 

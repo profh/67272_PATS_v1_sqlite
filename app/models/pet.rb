@@ -73,9 +73,7 @@ class Pet < ApplicationRecord
     # add error unless the animal id of the pet is in the array of possible animal ids
     unless treated_animal_ids.include?(self.animal_id)
       errors.add(:animal, "is an animal type not treated by PATS")
-      return false   # not necessary, but I like to add it ...
     end
-    return true  # also not strictly necessary ...
   end
   
   def owner_is_active_in_PATS_system
@@ -84,8 +82,6 @@ class Pet < ApplicationRecord
     # add error unless the owner id of the pet is in the array of active owners
     unless all_owner_ids.include?(self.owner_id)
       errors.add(:owner, "is not an active owner in PATS")
-      return false
     end
-    return true
   end
 end
