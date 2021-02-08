@@ -42,7 +42,7 @@ gem 'jquery-ui-rails', '6.0.1'
 gem 'cancancan', '2.1.2'
 gem 'validates_timeliness', '4.0.2'
 gem 'time_date_helpers', '0.0.2'
-gem 'carrierwave', '1.2.2'
+gem 'carrierwave', '1.3.2'
 gem 'will_paginate', '3.1.6'
 
 group :development, :test do
